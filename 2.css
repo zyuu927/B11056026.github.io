@@ -1,0 +1,179 @@
+/* 檔名：2.css */
+
+/* ===== Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== 全域版面 & 字體 ===== */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* 容器最大寬度並置中 */
+header, main, footer {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ===== Header + 導覽列 ===== */
+header {
+  background-color: #000;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: gold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* active 狀態 (表示目前所在頁) */
+nav a.active {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+/* ===== 參賽者標題 ===== */
+.players-title {
+  text-align: center;
+  margin-top: 2rem;
+  color: #ffcc00;
+  font-size: 1.5rem;
+}
+
+/* ===== Players Grid ===== */
+.player-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  /* 最少 240px，最多 1fr，自動填滿 */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.player-card {
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.player-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.player-card h3 {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.player-card p {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin: 0.25rem 0;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #000;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: auto;
+}
+
+/* ===== 回到最上方按鈕 ===== */
+.back-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #666;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0.8;
+  z-index: 1000;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.back-top:hover {
+  opacity: 1;
+  background-color: #888;
+}
+
+/* ===== Media Queries ===== */
+
+/* 手機：最大寬度 600px */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+  .players-title {
+    font-size: 1.3rem;
+  }
+  .player-card h3 {
+    font-size: 1.1rem;
+  }
+  .player-card p {
+    font-size: 0.9rem;
+  }
+  .player-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 小手機：最大寬度 480px */
+@media (max-width: 480px) {
+  .players-title {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+  }
+  .player-card h3 {
+    font-size: 1rem;
+  }
+  .player-card p {
+    font-size: 0.85rem;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
